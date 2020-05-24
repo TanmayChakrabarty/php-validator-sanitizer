@@ -1,0 +1,17 @@
+{
+    "name": "tanmay/php_validator_sanitizer",
+    "description": "Sanitizes and validates given inputs in PHP",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tanmay Chakrabarty",
+            "email": "cse.tanmay@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "tanmay\\ValidatorSanitizer\\" : "src"
+        }
+    },
+    "require": {}
+}

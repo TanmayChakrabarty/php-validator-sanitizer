@@ -1,0 +1,36 @@
+# validators
+
+- required
+- min_length
+- max_length
+- min_number
+- max_number
+- is_valid_date
+- is_valid_time
+- is_valid_date_time
+- is_valid_full_name
+- is_valid_name_part
+- is_valid_bd_mobile_number
+- is_valid_bd_nid_number
+- is_valid_bd_passport_number
+- is_valid_integer
+  - is_valid_signed_integer
+  - is_valid_unsigned_integer
+  - is_valid_positive_integer
+  - is_valid_negative_integer
+- is_valid_decimal
+  - is_valid_signed_decimal
+  - is_valid_unsigned_decimal
+  - is_valid_positive_decimal
+  - is_valid_negative_decimal
+- is_valid_number
+  - is_valid_signed_number
+  - is_valid_unsigned_number
+  - is_valid_positive_number
+  - is_valid_negative_decimal
+- is_number_in_range
+- is_number_greater_than
+- is_number_greater_than_equal
+- is_number_less_than
+- is_number_less_than_equal
+- is_in_array

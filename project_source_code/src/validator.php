@@ -11,26 +11,38 @@ class validator
         , is_min_number
         , is_max_number
         , is_valid_date
-        , is_in_list;
+        , is_in_array
+        , is_length_in_range
+        , is_number_in_range
+        , is_valid_time
+        , is_length
+        ;
 
-    private $sourceData;
-    private $fieldAliases;
-    private $configuration;
-
-    private $errors;
+    private array $sourceData = [];
+    private array $fieldAliases = [];
+    private array $configuration = [];
+    private string $current_language = '';
+    private array $lang = [];
+    private array $errors = [];
 
     /**
      * validator constructor.
      * @param array $data
      * @param array $aliases
-     * @return validator
+     * @param string $language
      */
-    public function __construct(array $data, array $aliases = [])
+    public function __construct(array $data, array $aliases = [], string $language = 'en')
     {
         $this->sourceData = $data;
         $this->fieldAliases = $aliases ? $aliases : [];
         $this->errors = [];
         $this->configuration = [];
+        $this->current_language = $language;
+
+        //including language file
+        if(file_exists(__DIR__."/languages/$this->current_language.php")){
+            $this->lang = include __DIR__."/languages/$this->current_language.php";
+        }
 
         return $this;
     }
@@ -60,7 +72,9 @@ class validator
         foreach ($this->configuration as $validatorName => $fields) {
             if ($fields) {
                 foreach ($fields as $fName => $param) {
-                    $this->$validatorName($fName, $param);
+                    $data = $this->sourceData[$fName];
+                    $fNameAlias = isset($this->fieldAliases[$fName]) ? $this->fieldAliases[$fName] : $fName;
+                    $this->$validatorName($fName, $data, $fNameAlias, $param);
                 }
             }
         }

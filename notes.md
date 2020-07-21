@@ -1,12 +1,12 @@
 # validators
 
-- required
-- min_length
-- max_length
-- min_number
-- max_number
-- is_valid_date
-- is_valid_time
+- required #
+- min_length #
+- max_length #
+- min_number #
+- max_number #
+- is_valid_date #
+- is_valid_time #
 - is_valid_date_time
 - is_valid_full_name
 - is_valid_name_part
@@ -28,9 +28,6 @@
   - is_valid_unsigned_number
   - is_valid_positive_number
   - is_valid_negative_decimal
-- is_number_in_range
-- is_number_greater_than
-- is_number_greater_than_equal
-- is_number_less_than
-- is_number_less_than_equal
-- is_in_array
+- is_number_in_range #
+- is_length_in_range #
+- is_in_list #

@@ -7,14 +7,11 @@ trait is_max_number{
         $this->register_configuration('is_max_number', $fields, $length);
         return $this;
     }
-    private function is_max_number(string $fName, float $length): void
+    private function is_max_number(string $fName, $data, string $fNameAlias, $length): void
     {
-        $data = $this->sourceData[$fName];
-        $fNameAlias = $this->fieldAliases[$fName];
-
         $ret = self::_is_max_number($data, $length);
 
-        if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " should be less than or equal to ".$length);
+        if (!$ret) $this->register_errors($fNameAlias. " should be less than or equal to ".$length);
     }
     public static function _is_max_number(float $data, float $length): bool
     {

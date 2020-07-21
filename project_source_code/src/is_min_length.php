@@ -8,18 +8,15 @@ trait is_min_length{
 
         return $this;
     }
-    private function is_min_length(string $fName, float $length): void
+    private function is_min_length(string $fName, $data, string $fNameAlias, $length): void
     {
-        $data = $this->sourceData[$fName];
-        $fNameAlias = $this->fieldAliases[$fName];
-
         $ret = self::_is_min_length($data, $length);
 
-        if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " should contain minimum ".$length." characters");
+        if (!$ret) $this->register_errors($fNameAlias . " should contain minimum ".$length." characters");
     }
     public static function _is_min_length(string $data, float $length): bool
     {
-        if ($data >= $length) return true;
+        if (mb_strlen($data) >= $length) return true;
         else return false;
     }
 }

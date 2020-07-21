@@ -1,17 +1,28 @@
 {
-    "name": "tanmay/php_validator_sanitizer",
-    "description": "Sanitizes and validates given inputs in PHP",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Tanmay Chakrabarty",
-            "email": "cse.tanmay@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "tanmay\\ValidatorSanitizer\\" : "src"
-        }
-    },
-    "require": {}
+  "name": "tanmay/php_validator_sanitizer",
+  "description": "Sanitizes and validates given inputs in PHP",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Tanmay Chakrabarty",
+      "email": "cse.tanmay@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "tanmay\\ValidatorSanitizer\\": "src"
+    }
+  },
+  "require": {
+    "php": "7.4 || ^7.4",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tanmay\\ValidatorSanitizerTests\\": "Tests"
+    }
+  }
 }

@@ -10,11 +10,15 @@ trait is_valid_date{
      */
     public function rule_valid_date(array $fields, string $format = 'ymd', string $separator = '-')
     {
-        $this->register_configuration('is_valid_date', $fields, ['format' => $format, 'separator' => $separator]);
+        $param = new \stdClass();
+        $param->format = $format;
+        $param->separator = $separator;
+
+        $this->register_configuration('is_valid_date', $fields, $param);
 
         return $this;
     }
-    private function is_valid_date(string $fName, array $param): void
+    private function is_valid_date(string $fName, object $param): void
     {
         $data_date = $this->sourceData[$fName];
         $fNameAlias = $this->fieldAliases[$fName];
@@ -22,15 +26,15 @@ trait is_valid_date{
         $format = $param['format'];
         $separator = $param['separator'];
 
-        $ret = self::_is_valid_date($data_date, $format, $separator);
+        $ret = self::_is_valid_date($data_date, $param->format, $param->separator);
 
         if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " is not a valid date");
     }
     public static function _is_valid_date(string $date, string $format = 'ymd', string $separator = '-'): bool
     {
-        $allowedFormats = array('dmy', 'dym', 'mdy', 'myd', 'ymd', 'ydm');
+        $allowedDateFormats = array('dmy', 'dym', 'mdy', 'myd', 'ymd', 'ydm');
 
-        if (!self::_is_in_list($format, $allowedFormats)) return false;
+        if (!self::_is_in_list($format, $allowedDateFormats)) return false;
 
         $y = null;
         $m = null;

@@ -1,3 +1,5 @@
 /.idea
 /project_source_code/vendor
 vendor
+/index.php
+/notes.md

@@ -25,7 +25,7 @@ trait is_number_in_range{
 
         $ret = self::_is_number_in_range($data, $default->min, $default->max);
 
-        if (!$ret) $this->register_errors("Value of ".($fNameAlias ? $fNameAlias : $fName) . " should be in $default->min - $default->max range");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_number_in_range'], $fNameAlias, $default->min, $default->max));
     }
     public static function _is_number_in_range(string $data, int $min, int $max): bool
     {

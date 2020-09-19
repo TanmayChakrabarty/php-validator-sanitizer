@@ -12,7 +12,7 @@ trait is_length{
     {
         $ret = self::_is_length($data, $length);
 
-        if (!$ret) $this->register_errors($fNameAlias . " should contain only ".$length." characters");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_length'], $fNameAlias, $length));
     }
     public static function _is_length(string $data, float $length): bool
     {

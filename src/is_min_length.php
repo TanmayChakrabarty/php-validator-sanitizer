@@ -12,7 +12,7 @@ trait is_min_length{
     {
         $ret = self::_is_min_length($data, $length);
 
-        if (!$ret) $this->register_errors($fNameAlias . " should contain minimum ".$length." characters");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_min_length'], $fNameAlias, $length));
     }
     public static function _is_min_length(string $data, float $length): bool
     {

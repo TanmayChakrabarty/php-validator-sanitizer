@@ -12,7 +12,7 @@ trait is_max_length{
     {
         $ret = self::_is_max_length($data, $length);
 
-        if (!$ret) $this->register_errors($fNameAlias . " should contain maximum ".$length." characters");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_max_length'], $fNameAlias, $length));
     }
     public static function _is_max_length(string $data, float $length): bool
     {

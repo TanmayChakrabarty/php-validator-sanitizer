@@ -28,13 +28,13 @@ trait is_valid_time{
 
         $ret = self::_is_valid_time($data_time, $param->format, $param->separator, $param->_24Hours, $param->allowSingleDigit);
 
-        if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " is not a valid time");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_valid_time'], $fNameAlias));
     }
     public static function _is_valid_time(string $time, string $format = 'his', string $separator = ':', bool $_24Hours = true, bool $allowSingleDigit = false): bool
     {
         $allowedTimeFormats = ['his', 'hsi', 'ihs', 'ish', 'shi', 'sih'];
 
-        if (!self::_is_in_list($format, $allowedTimeFormats)) return false;
+        if (!self::_is_in_array($format, $allowedTimeFormats)) return false;
 
         $h = null;
         $i = null;

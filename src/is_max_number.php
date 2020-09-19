@@ -11,7 +11,7 @@ trait is_max_number{
     {
         $ret = self::_is_max_number($data, $length);
 
-        if (!$ret) $this->register_errors($fNameAlias. " should be less than or equal to ".$length);
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_max_number'], $fNameAlias, $length));
     }
     public static function _is_max_number(float $data, float $length): bool
     {

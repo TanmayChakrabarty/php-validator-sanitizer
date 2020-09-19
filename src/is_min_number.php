@@ -15,7 +15,7 @@ trait is_min_number{
 
         $ret = self::_is_min_number($data, $length);
 
-        if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " should be greater than or equal to ".$length);
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_min_number'], $fNameAlias, $length));
     }
     public static function _is_min_number(float $data, float $length): bool
     {

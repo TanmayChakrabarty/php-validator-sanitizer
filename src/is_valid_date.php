@@ -28,13 +28,13 @@ trait is_valid_date{
 
         $ret = self::_is_valid_date($data_date, $param->format, $param->separator);
 
-        if (!$ret) $this->register_errors(($fNameAlias ? $fNameAlias : $fName) . " is not a valid date");
+        if (!$ret) $this->register_errors(sprintf($this->lang['is_valid_date'], $fNameAlias));
     }
     public static function _is_valid_date(string $date, string $format = 'ymd', string $separator = '-'): bool
     {
         $allowedDateFormats = array('dmy', 'dym', 'mdy', 'myd', 'ymd', 'ydm');
 
-        if (!self::_is_in_list($format, $allowedDateFormats)) return false;
+        if (!self::_is_in_array($format, $allowedDateFormats)) return false;
 
         $y = null;
         $m = null;

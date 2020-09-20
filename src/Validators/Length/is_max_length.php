@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Length;
 
 trait is_max_length{
     public function rule_max_length(array $fields, int $length)

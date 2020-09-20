@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Length;
 
 trait is_length_in_range{
     public function rule_length_in_range(array $fields, int $minLength, int $maxLength)

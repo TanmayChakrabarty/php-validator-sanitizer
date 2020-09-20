@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\DateTime;
 
 trait is_valid_time{
     /**

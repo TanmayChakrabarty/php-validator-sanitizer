@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Number;
 
 trait is_number_in_range{
     public function rule_number_in_range(array $fields, int $minLength, int $maxLength)

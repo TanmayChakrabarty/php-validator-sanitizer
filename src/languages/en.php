@@ -12,4 +12,5 @@ return array(
     'is_number_in_range' => "%s should be between %d - %d",
     'is_valid_date' => "%s is not a valid date",
     'is_valid_time' => "%s is not a valid time",
+    'is_number' => "%s should be %s",
 );

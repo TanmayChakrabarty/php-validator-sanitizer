@@ -6,16 +6,17 @@ namespace tanmay\ValidatorSanitizer;
 class validator
 {
     use is_required
-        , is_min_length
-        , is_max_length
-        , is_min_number
-        , is_max_number
-        , is_valid_date
+        , Validators\Length\is_min_length
+        , Validators\Length\is_max_length
+        , Validators\Number\is_min_number
+        , Validators\Number\is_max_number
+        , Validators\DateTime\is_valid_date
         , is_in_array
-        , is_length_in_range
-        , is_number_in_range
-        , is_valid_time
-        , is_length
+        , Validators\Length\is_length_in_range
+        , Validators\Number\is_number_in_range
+        , Validators\DateTime\is_valid_time
+        , Validators\Length\is_length
+        , Validators\Number\is_number
         ;
 
     private array $sourceData = [];

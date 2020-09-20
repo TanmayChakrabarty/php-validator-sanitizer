@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Number;
 
 trait is_min_number{
     public function rule_min_number(array $fields, float $length)

@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Number;
 
 trait is_max_number{
     public function rule_max_number(array $fields, float $length)

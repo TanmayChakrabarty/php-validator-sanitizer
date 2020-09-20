@@ -1,5 +1,5 @@
 <?php
-namespace tanmay\ValidatorSanitizer;
+namespace tanmay\ValidatorSanitizer\Validators\Length;
 
 trait is_min_length{
     public function rule_min_length(array $fields, int $length)

@@ -15,8 +15,8 @@ class validator
         , Validators\Length\is_length_in_range
         , Validators\Number\is_number_in_range
         , Validators\DateTime\is_valid_time
-        , Validators\Length\is_length
-        , Validators\Number\is_number
+        , Validators\Length\is_fixed_length
+        , Validators\Number\is_fixed_number
         ;
 
     private array $sourceData = [];

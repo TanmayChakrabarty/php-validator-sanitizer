@@ -1,0 +1,15 @@
+NUMBERS
+    is_max_number
+    is_min_number
+    is_fixed_number
+    is_number_in_range
+
+STRING
+    is_fixed_length
+    is_length_in_range
+    is_max_length
+    is_min_length
+
+DATE & TIME
+    is_valid_date
+    is_valid_time
